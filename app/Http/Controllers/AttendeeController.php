@@ -188,7 +188,7 @@ class AttendeeController extends Controller
                 $attendee->user_id = $user->id;
                 $attendee->group_id = $user->group_id;
                 // need to figure this out (maybe user table holds student user_id ?)
-                $attendee->student_id = 2;
+                $attendee->student_id = ($user->is_student) ? $user->id : $user->designated_student;
                 $attendee->is_waitlisted = $waitlist;
                 $attendee->save();
             }

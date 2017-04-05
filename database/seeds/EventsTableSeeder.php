@@ -20,7 +20,9 @@ class EventsTableSeeder extends Seeder
             'event_type_id' => 4,
             'name' => 'Concert',
             'status' => 'Open',
-            'start_date' => '2017-01-17',
+            'open_date' => '2017-04-02',
+            'open_time' => '11:00:00',
+            'start_date' => '2017-04-04',
             'start_time' => '17:45',
             // End Date & Time are not required
             'location_id' => 1,
@@ -28,8 +30,8 @@ class EventsTableSeeder extends Seeder
             'credits' => 50,
             'manager_id' => 1, // 1 = Michael Essex
             // Allow Students has a default = 1
-            'required_adults' => 2,
-            'required_youths' => 1,
+            'required_adults' => 3,
+            'required_youths' => 2,
             //'attending_adults' => 2,
             //'attending_youths' => 1,
             ]
@@ -40,7 +42,9 @@ class EventsTableSeeder extends Seeder
             'event_type_id' => 1,
             'name' => 'Flames',
             'status' => 'Open',
-            'start_date' => '2017-01-17',
+            'open_date' => '2017-04-02',
+            'open_time' => '11:05:00',
+            'start_date' => '2017-04-05',
             'start_time' => '17:45',
             // End Date & Time are not required
             'location_id' => 1,
@@ -60,7 +64,9 @@ class EventsTableSeeder extends Seeder
             'event_type_id' => 5,
             'name' => 'Stamps',
             'status' => 'Open',
-            'start_date' => '2017-01-21',
+            'open_date' => '2017-04-02',
+            'open_time' => '11:10:00',
+            'start_date' => '2017-04-06',
             'start_time' => '17:45',
             // End Date & Time are not required
             'location_id' => 1,
@@ -80,7 +86,9 @@ class EventsTableSeeder extends Seeder
             'event_type_id' => 1,
     		'name' => 'Flames',
     		'status' => 'Open',
-    		'start_date' => '2017-01-21',
+            'open_date' => '2017-04-02',
+            'open_time' => '11:15:00',
+    		'start_date' => '2017-04-07',
             'start_time' => '17:45',
             // End Date & Time are not required
             'location_id' => 1,
@@ -98,8 +106,10 @@ class EventsTableSeeder extends Seeder
     		[
     		'event_type_id' => 2,
             'name' => 'Hitmen',
-    		'status' => 'Pending',
-    		'start_date' => '2017-01-22',
+    		'status' => 'Pending',            
+            'open_date' => '2017-04-02',
+            'open_time' => '11:20:00',
+    		'start_date' => '2017-04-08',
             'start_time' => '14:15',
             // End Date & Time are not required
             'location_id' => 1,
@@ -117,7 +127,9 @@ class EventsTableSeeder extends Seeder
     		'event_type_id' => 2,
             'name' => 'Hitmen',
     		'status' => 'Pending',
-    		'start_date' => '2017-01-29',
+            'open_date' => '2017-04-02',
+            'open_time' => '11:25:00',
+    		'start_date' => '2017-04-09',
             'start_time' => '14:15',
             // End Date & Time are not required
             'location_id' => 1,
@@ -135,7 +147,9 @@ class EventsTableSeeder extends Seeder
     		'event_type_id' => 1,
             'name' => 'Flames',
     		'status' => 'Pending',
-    		'start_date' => '2017-02-01',
+            'open_date' => '2017-04-02',
+            'open_time' => '11:30:00',
+    		'start_date' => '2017-04-10',
             'start_time' => '17:45',
             // End Date & Time are not required
             'location_id' => 1,
@@ -153,7 +167,9 @@ class EventsTableSeeder extends Seeder
     		'event_type_id' => 3,
             'name' => 'Roughnecks',
     		'status' => 'Open',
-    		'start_date' => '2017-02-04',
+            'open_date' => '2017-04-02',
+            'open_time' => '11:45:00',
+    		'start_date' => '2017-04-11',
             'start_time' => '17:15',
             // End Date & Time are not required
             'location_id' => 1,
@@ -172,7 +188,9 @@ class EventsTableSeeder extends Seeder
     		'event_type_id' => 3,
             'name' => 'Roughnecks',
     		'status' => 'Pending',
-    		'start_date' => '2017-02-12',
+            'open_date' => '2017-04-02',
+            'open_time' => '11:50:00',
+    		'start_date' => '2017-04-12',
             'start_time' => '12:15',
             // End Date & Time are not required
             'location_id' => 1,
@@ -190,7 +208,9 @@ class EventsTableSeeder extends Seeder
     		'event_type_id' => 1,
             'name' => 'Flames',
     		'status' => 'Pending',
-    		'start_date' => '2017-02-13',
+            'open_date' => '2017-04-02',
+            'open_time' => '11:55:00',
+    		'start_date' => '2017-04-13',
             'start_time' => '16:45',
             // End Date & Time are not required
             'location_id' => 1,
@@ -208,7 +228,9 @@ class EventsTableSeeder extends Seeder
     		'event_type_id' => 1,
             'name' => 'Flames',
     		'status' => 'Pending',
-    		'start_date' => '2017-02-15',
+            'open_date' => '2017-04-02',
+            'open_time' => '12:00:00',
+    		'start_date' => '2017-04-14',
             'start_time' => '17:15',
             // End Date & Time are not required
             'location_id' => 1,

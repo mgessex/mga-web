@@ -257,6 +257,9 @@
                 @include('components.breadcrumb')
                 
             </div>
+
+            @include('components.flashmsg')
+            
             @yield('content')
             
             <!-- Main Footer -->

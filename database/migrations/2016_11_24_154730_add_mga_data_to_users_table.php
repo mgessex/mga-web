@@ -25,6 +25,7 @@ class AddMgaDataToUsersTable extends Migration
             $table->boolean('is_bookable')->default(1);
             $table->boolean('is_active')->default(1);
             $table->boolean('is_student')->default(0);
+            $table->unsignedInteger('designated_student')->nullable();
             $table->boolean('has_proserve')->default(0);
             $table->string('proserve_num',13)->nullable();
             $table->date('proserve_date')->nullable();

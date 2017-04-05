@@ -9,9 +9,7 @@
 
 @section('content')
 
-            <form method="POST" action="{{ action('UserController@update', Auth::user()->id) }}">
-                {{ csrf_field() }}
-                <input type="hidden" name="_method" value="PUT">
+            
 
             @if (count($errors) > 0)
             <div class="alert alert-danger">
@@ -24,7 +22,7 @@
             @endif
 
             <div class="row">
-                <div class="col-md-6 col-md-offset-3">
+                <div class="col-md-8 col-md-offset-2">
 
                     <div class="panel panel-default">
 
@@ -33,6 +31,10 @@
                          </div>
 
                         <div class="member-form-inputs">
+
+                            <form role="form" method="POST" action="{{ action('UserController@update', Auth::user()->id) }}">
+                            {{ csrf_field() }}
+                            <input type="hidden" name="_method" value="PUT">
 
                             @if($errors->has('name'))
                             <div class="row form-group has-error">
@@ -92,34 +94,70 @@
                                 </div>
                             </div>
 
+                            @if($errors->has('dob'))
+                            <div class="row form-group has-error">
+                            @else
                             <div class="row form-group">
+                            @endif
                                 <label class="col-sm-4 control-label" for="phone2">Date of Birth</label>
                                 <div class="col-sm-8">
                                     <div class="input-group">
                                     <span class="input-group-addon">
-                                                <i class="fa-calendar"></i>
+                                                <i class="linecons-calendar"></i>
                                             </span>
                                     <input type="text" class="form-control" name="dob" id="dob" data-mask="yyyy-mm-dd" value="{{ Auth::user()->date_of_birth }}" />
                                     </div>
                                 </div>
                             </div>
 
+                            @if(!Auth::user()->is_student)
+                            <!-- Designated Student -->
+                            <div class="row form-group">
+                                <label class="col-sm-4 control-label" for="phone2">Default Student</label>
+                                <script type="text/javascript">
+                                    jQuery(document).ready(function($)
+                                    {
+                                        $("#designated_student").selectBoxIt().on('open', function()
+                                        {
+                                            // Adding Custom Scrollbar
+                                            $(this).data('selectBoxSelectBoxIt').list.perfectScrollbar();
+                                        });
+                                    });
+                                </script>
+                                <div class="col-sm-8">
+                                    <div class="input-group">
+                                        <span class="input-group-addon">
+                                            <i class="linecons-graduation-cap"></i>
+                                        </span>
+                                        <select class="form-control" name="designated_student" id="designated_student">
+                                            @foreach($groupStudents as $student)
+                                            <option value="{{ $student->id }}">{{ $student->name }}</option>
+                                            @endforeach
+                                        </select>
+                                    </div>
+                                </div>
+                            </div>
+                            @endif
+
                             <div class="row">
                                 <div class="col-sm-3 pull-right-sm">
                                     <button class="btn btn-secondary">Update</button>
                                 </div>
                             </div>
+                        <form>
 
                         </div>
                     </div>
                 </div>
             </div>
 
-            </form>
+            
 
 
 @endsection
 
 @section('bottomScripts')
+    <script src="/js/jquery-ui/jquery-ui.min.js"></script>
     <script src="/js/inputmask/jquery.inputmask.bundle.js"></script>
+    <script src="/js/selectboxit/jquery.selectBoxIt.min.js"></script>
 @endsection

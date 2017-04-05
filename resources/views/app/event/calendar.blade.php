@@ -3,7 +3,7 @@
 @section('pagetitle')
                 <div class="title-env">
                     <h1 class="title">Events Calendar</h1>
-                    <p class="description">This page displays events in an interactive calendar.</p>
+                    <p class="description">This page displays events in an interactive calendar. {{ $today }}</p>
                 </div>
 @endsection
 
@@ -14,7 +14,7 @@
             jQuery(document).ready(function($)
             {
                 // Color Initialization
-                var colors = [ 'green','red','orange' ];
+                var colors = { Open:'green', Closed:'red', Pending:'orange' };
 
                 // Calendar Initialization
                 $('#calendar').fullCalendar({
@@ -27,7 +27,7 @@
                         prev: 'prev fa-angle-left',
                         next: 'next fa-angle-right',
                     },
-                    defaultDate: '2017-01-20',
+                    defaultDate: '{{ $today->toDateString() }}',
                     editable: false,
                     eventLimit: true,
                     aspectRatio: 2,
@@ -47,7 +47,7 @@
                             } @if(!$loop->last) , @endif
                             @endforeach
                         ], 
-                        color: colors[{{ $loop->index }}]
+                        color: colors['{{ $status->status }}']
                     },
                     @endforeach
 
@@ -78,12 +78,6 @@
     <link rel="stylesheet" href="/js/fullcalendar/fullcalendar.min.css">
 
     <!-- Bottom Scripts -->
-    <script src="/js/bootstrap.min.js"></script>
-    <script src="/js/TweenMax.min.js"></script>
-    <script src="/js/resizeable.js"></script>
-    <script src="/js/joinable.js"></script>
-    <script src="/js/xenon-api.js"></script>
-    <script src="/js/xenon-toggles.js"></script>
     <script src="/js/moment.min.js"></script>
 
 

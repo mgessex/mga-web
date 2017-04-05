@@ -29,7 +29,13 @@ class ProfileComposer
      */
     public function compose(View $view)
     {
-        // Current authenticated user's group_id
+        // get user's designated student name (if they are not a student themselves)
+        if(!Auth::user()->is_student) {
+            $studentName = User::findOrFail(Auth::user()->designated_student)->name;
+            $view->with('designatedStudentName', $studentName);
+        }
+
+        // get current authenticated user's group_id
         $groupId = Auth::user()->group_id;
 
         // Retrieve user's group name 
@@ -52,6 +58,7 @@ class ProfileComposer
         }
 
         // Bind Data to View
+        
         $view->with('groupName', $group->name);
         $view->with('groupMembers', $groupMembers);
         $view->with('userRole', $userRole);

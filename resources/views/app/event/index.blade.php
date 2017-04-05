@@ -9,17 +9,18 @@
 
 @section('content')
 
-			@include('components.flashmsg')
-
-			<div>Name: {{ $event->name }}</div>
-			<div>Status: {{ $event->status }}</div>
-			<div>Start Date: {{ $event->start_date }}</div>
-			<div>Start Time: {{ $event->start_time }}</div>
-			<div>Allow Students: {{ $event->allow_students }}</div>
-			<div>Required Adults: {{ $event->required_adults }}</div>
-			<div>Required Youths: {{ $event->required_youths }}</div>
-			<div>Attending Adults: {{ $event->attending_adults }}</div>
-			<div>Attending Youths: {{ $event->attending_youths }}</div>
+			
+			<div><p>Name: {{ $event->name }}</p></div>
+			<div><p>Status: {{ $event->status }}</p></div>
+			<div><p>Open Date: {{ $event->open_date }}</p></div>
+			<div><p>Open Time: {{ $event->open_time }}</p></div>
+			<div><p>Start Date: {{ $event->start_date }}</p></div>
+			<div><p>Start Time: {{ $event->start_time }}</p></div>
+			<div><p>Allow Students: {{ $event->allow_students }}</p></div>
+			<div><p>Required Adults: {{ $event->required_adults }}</p></div>
+			<div><p>Required Youths: {{ $event->required_youths }}</p></div>
+			<div><p>Attending Adults: {{ $event->attending_adults }}</p></div>
+			<div><p>Attending Youths: {{ $event->attending_youths }}</p></div>
 
 			<div>Event Workers</div>
 			@foreach($attendees->where('is_waitlisted', 0) as $attendee)

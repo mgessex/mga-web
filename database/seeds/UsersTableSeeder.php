@@ -22,6 +22,7 @@ class UsersTableSeeder extends Seeder
             'email' => 'michael.essex@icloud.com',
             'password' => bcrypt('Sdiserver1'),
             'is_admin' => 1,
+            'designated_student' => 2,
             'date_of_birth' => '1973-03-15',
             'has_proserve' => 1,
             'proserve_num' => '201606240009',
@@ -48,7 +49,11 @@ class UsersTableSeeder extends Seeder
             'email' => 'gloria.essex@gmail.com',
             'password' => bcrypt('Sdiserver1'),
             'is_admin' => 0,
+            'designated_student' => 2,
             'date_of_birth' => '1976-01-30',
+            'has_proserve' => 1,
+            'proserve_num' => '201606240009',
+            'proserve_date' => '2016-06-30',
             ]
         );
 
@@ -59,7 +64,23 @@ class UsersTableSeeder extends Seeder
             'email' => 'ethan.essex@icloud.com',
             'password' => bcrypt('Sdiserver1'),
             'is_admin' => 0,
+            'designated_student' => 2,
             'date_of_birth' => '2003-03-16',
+            ]
+        );
+
+        User::create(
+            [
+            'group_id' => 1,
+            'name' => 'Extra-1 Essex',
+            'email' => 'extra1.essex@gmail.com',
+            'password' => bcrypt('Sdiserver1'),
+            'is_admin' => 0,
+            'designated_student' => 2,
+            'date_of_birth' => '1976-01-30',
+            'has_proserve' => 1,
+            'proserve_num' => '201606240009',
+            'proserve_date' => '2016-06-30',
             ]
         );
 
@@ -72,6 +93,7 @@ class UsersTableSeeder extends Seeder
             'email' => 'heather.essex@icloud.com',
             'password' => bcrypt('Sdiserver1'),
             'is_admin' => 1,
+            'designated_student' => 7,
             'date_of_birth' => '1973-03-15',
             'has_proserve' => 1,
             'proserve_num' => '201606240007',
@@ -98,7 +120,7 @@ class UsersTableSeeder extends Seeder
             'email' => 'calum.essex@icloud.com',
             'password' => bcrypt('Sdiserver1'),
             'is_admin' => 0,
-            'date_of_birth' => '1976-01-30',
+            'date_of_birth' => '2000-01-30',
             'is_student' => 1,
             ]
         );
@@ -110,7 +132,26 @@ class UsersTableSeeder extends Seeder
             'email' => 'guy.essex@icloud.com',
             'password' => bcrypt('Sdiserver1'),
             'is_admin' => 0,
+            'designated_student' => 8,
             'date_of_birth' => '1968-03-16',
+            'has_proserve' => 1,
+            'proserve_num' => '201606240009',
+            'proserve_date' => '2016-06-30',
+            ]
+        );
+
+        User::create(
+            [
+            'group_id' => 2,
+            'name' => 'Extra-1 Essex',
+            'email' => 'extra1.essex@icloud.com',
+            'password' => bcrypt('Sdiserver1'),
+            'is_admin' => 0,            
+            'designated_student' => 8,
+            'date_of_birth' => '1976-01-30',
+            'has_proserve' => 1,
+            'proserve_num' => '201606240009',
+            'proserve_date' => '2016-06-30',
             ]
         );
 

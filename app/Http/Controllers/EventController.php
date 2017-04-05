@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use App\Event;
 use Auth;
+use Carbon\Carbon;
 
 class EventController extends Controller
 {
@@ -51,8 +52,11 @@ class EventController extends Controller
                         ->where('status', '<>', 'Cancelled')
                         ->get();
 
-        // bind them to the view
-        return view('app.event.calendar', ['events' => $events, 'statuses' => $statuses]);
+        // date stuff
+        $today = Carbon::today();
+
+        // bind stuff to the view
+        return view('app.event.calendar', ['events' => $events, 'statuses' => $statuses, 'today' => $today]);
     }
 
     /**
