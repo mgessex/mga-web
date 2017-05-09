@@ -5,6 +5,7 @@ namespace App;
 use Illuminate\Notifications\Notifiable;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Database\Eloquent\Model;
+use Carbon\Carbon;
 
 class User extends Authenticatable
 {
@@ -60,5 +61,26 @@ class User extends Authenticatable
         else {
             return false;
         }
+    }
+
+    public function balance()
+    {
+        return $this->hasMany('App\Transaction', 'student_id')->sum('amount');
+    }
+
+    public function transactions()
+    {
+        return $this->hasMany('App\Transaction', 'student_id');
+    }
+
+    public function recentTransactions()
+    {
+        return $this->hasMany('App\Transaction', 'student_id')->latest()->limit(3);
+    }
+
+    public function lastTransactionDate()
+    {
+        //$dt = new DateTime(
+        return new Carbon($this->hasMany('App\Transaction', 'student_id')->select('created_at')->latest()->first()->created_at);
     }
 }

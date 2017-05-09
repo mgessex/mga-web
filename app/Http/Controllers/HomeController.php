@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
+use App\User;
 
 class HomeController extends Controller
 {
@@ -23,7 +25,12 @@ class HomeController extends Controller
      */
     public function dashboard()
     {
-        return view('app.index');
+        $view = view('app.index');
+        // Return all students from this user's group
+        $groupStudents = User::where([['group_id', Auth::user()->group_id],['is_student', 1]])->get();
+
+        $view->with('groupStudents', $groupStudents);
+        return $view;
     }
 
     /**
