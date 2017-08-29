@@ -63,22 +63,34 @@ class User extends Authenticatable
         }
     }
 
-    public function balance()
+    public function upcomingScheduledEvents()
+    {
+        //return $this->hasManyThrough('App\Event','App\Attendee','user_id');
+        //$query = $this->belongsToMany('App\Event','attendees');
+        //$query = $this->hasMany('App\Attendee');
+        //logger($query->sql);
+        return $this->hasMany('App\Attendee', 'group_id', 'group_id');
+        //return $this->belongsToMany('App\Event','attendees','group_id','event_id');
+
+        // given the group id, return all events for all group members
+    }
+
+    public function bb_balance()
     {
         return $this->hasMany('App\Transaction', 'student_id')->sum('amount');
     }
 
-    public function transactions()
+    public function bb_transactions()
     {
         return $this->hasMany('App\Transaction', 'student_id');
     }
 
-    public function recentTransactions()
+    public function bb_recentTransactions()
     {
         return $this->hasMany('App\Transaction', 'student_id')->latest()->limit(3);
     }
 
-    public function lastTransactionDate()
+    public function bb_lastTransactionDate()
     {
         //$dt = new DateTime(
         return new Carbon($this->hasMany('App\Transaction', 'student_id')->select('created_at')->latest()->first()->created_at);

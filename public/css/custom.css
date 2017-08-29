@@ -9,3 +9,30 @@ body {
 
 a {
 }
+
+.mga-Open .panel {
+	border-color: green;
+	border-width: 2px;
+}
+
+.mga-Open .panel-title {
+	color: green;
+}
+
+.mga-Pending .panel {
+	border-color: orange;
+	border-width: 2px;
+}
+
+.mga-Pending .panel-title {
+	color: orange;
+}
+
+.mga-Closed .panel {
+	border-color: red;
+	border-width: 2px;
+}
+
+.mga-Closed .panel-title {
+	color: red;
+}

@@ -79,6 +79,5 @@ class UserController extends Controller
         $request->session()->flash('alert-success', 'Profile Saved Successfully!');
         
         return redirect('home/myprofile');
-        //return view('user.profile');
     }
 }

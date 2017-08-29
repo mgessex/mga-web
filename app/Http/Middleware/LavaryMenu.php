@@ -34,10 +34,12 @@ class LavaryMenu
         else{
             Menu::make('appNavBar', function($menu){
                 $menu->add('Dashboard', 'home');
+                    $menu->dashboard->add('Account', 'home/account');
                 $menu->add('Events', 'home/events');
-                    $menu->events->add('Future', 'home/events/future');
                 $menu->add('Family', 'home/family');
                 $menu->add('My Events', 'home/myevents');
+                    $menu->myEvents->add('Future', 'home/myevents/future');
+                    $menu->myEvents->add('History', 'home/myevents/history');
                 
                 if(Auth::user()->is_admin) {
                     $menu->add('Admin', 'home/admin');

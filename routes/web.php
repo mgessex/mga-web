@@ -41,7 +41,12 @@ Route::get('home', 'HomeController@dashboard');
 Route::get('home/events', 'EventController@calendar');
 Route::get('home/events/event', 'EventController@index')->name('event');
 Route::get('home/events/event/adduser', 'AttendeeController@adduser');
-Route::get('home/events/future', 'EventController@future');
+//Route::get('home/events/future', 'EventController@future');
+
+Route::get('home/myevents/future', 'MyEventController@future');
+Route::get('home/myevents/history', 'MyEventController@history');
+
+Route::get('home/account', 'HomeController@account');
 
 Route::get('home/settings', 'HomeController@settings');
 Route::get('home/myprofile', 'UserController@index');

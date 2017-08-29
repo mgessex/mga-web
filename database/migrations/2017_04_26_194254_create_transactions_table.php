@@ -17,9 +17,12 @@ class CreateTransactionsTable extends Migration
             $table->increments('id');
             $table->string('activity');
             $table->unsignedInteger('student_id');
+            $table->string('student_name');
             $table->unsignedInteger('user_id');
+            $table->string('user_name');
             $table->unsignedInteger('event_id')->nullable();
             $table->boolean('is_credit')->default(1);
+            $table->boolean('is_event')->default(1);
             $table->decimal('amount', 5, 2); 
             $table->timestamps();
         });
